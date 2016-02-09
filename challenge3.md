@@ -10,5 +10,5 @@ end
 
 ####Test Cases
 
-Test.assert_equals(break_chocolate(5, 5), 24)
-Test.assert_equals(break_chocolate(7, 4), 27)
+- Test.assert_equals(break_chocolate(5, 5), 24)
+- Test.assert_equals(break_chocolate(7, 4), 27)

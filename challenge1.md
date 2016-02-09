@@ -16,10 +16,10 @@ It should assume that all numbers are not signed and written in base 10
 
 
 ####Test Cases
-Test.assertEquals(myParseInt("1"), 1);
-Test.assertEquals(myParseInt("  1 "), 1);
-Test.assertEquals(myParseInt("08"), 8);
-Test.expect(isNaN(myParseInt("5 friends")));
-Test.expect(isNaN(myParseInt("16.5")));
+- Test.assertEquals(myParseInt("1"), 1);
+- Test.assertEquals(myParseInt("  1 "), 1);
+- Test.assertEquals(myParseInt("08"), 8);
+- Test.expect(isNaN(myParseInt("5 friends")));
+- Test.expect(isNaN(myParseInt("16.5")));
 
 

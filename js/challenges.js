@@ -2,7 +2,7 @@
  * Author: Roland Fong
  * Description: Challenge project for Vonage.
  */
-
+"use strict";
 /* Challenge 1:
  * Returns integer representation of string only if
  * the string is a single integer value, allowing

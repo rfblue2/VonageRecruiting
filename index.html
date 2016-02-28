@@ -1,29 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Vonage Challenges</title>
-  </head>
-  <body>
-    <h1>Challenge 1</h1>
-    <form>
-    Enter String to Parse:<br>
-    <input type="text" name="parse_str">
-    </form>
-    <br/>
-    
-    <h1>Challenge 2</h1>
-    <form>
-    Enter Numbers separated by spaces:<br>
-    <input type="text" name="nums">
-    </form>
-    <br/>
-      
-    <h1>Challenge 3</h1>
-    <form>
-    Chocolate bar width:<br>
-    <input type="text" name="width">
-    Chocolate bar height:<br>
-    <input type="text" name="height">
-    </form>
-  </body>
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Vonage Challenges</title>
+
+        <!-- Bootstrap -->
+        <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body ng-app="Vonage Challenges">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12" ng-controller="ParseController as parseCtrl">
+                    <h1>Challenge 1</h1>
+                    <form>
+                        <h3>Enter String to Parse:</h3>
+                        <fieldset class="form-group">
+                            <textarea ng-model="parseCtrl.strInput" class="form-control" placeholder="Enter String here"></textarea>
+                        </fieldset>
+                        <h2>Parsed Integer: {{parseCtrl.getParsedStr()}}</h2>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Challenge 2</h1>
+                    <form>
+                    Enter Numbers separated by spaces:<br>
+                    <input type="text" name="nums">
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                <h1>Challenge 3</h1>
+                    <form>
+                    Chocolate bar width:<br>
+                    <input type="text" name="width">
+                    Chocolate bar height:<br>
+                    <input type="text" name="height">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- AngularJS -->  
+        <script src="./node_modules/angular/angular.js"></script>
+        <script src="js/challenges.js"></script>
+        <script src="js/app.js"></script>
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    </body>
 </html>

@@ -34,11 +34,15 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12" ng-controller="FindController as findCtrl">
                     <h1>Challenge 2</h1>
-                    <form>
-                    Enter Numbers separated by spaces:<br>
-                    <input type="text" name="nums">
+                    <form ng-submit="findCtrl.getSmallest()">
+                        <h3>Enter Numbers separated by spaces:</h3>
+                        <fieldset class="form-group">
+                            <textarea ng-model="findCtrl.arrayInput" class="form-control" placeholder="Enter Numbers here"></textarea>
+                        </fieldset>
+                        <input class="btn-primary" type="submit" value="Submit">
+                        <h2>Smallest Number: {{findCtrl.smallest}}</h2>
                     </form>
                 </div>
             </div>

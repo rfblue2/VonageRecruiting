@@ -9,7 +9,7 @@
  * whitespace at either end.
  */
 var myParseInt = function(str) {
-    if (/\d\s\d/.test(str)) return NaN;  // Check digit-space-digit case.
+    if (/\d\s+\d/.test(str)) return NaN;  // Check digit-space-digit case.
     str = str.replace(/\s/g, "");        // Remove whitespace.
     if (/\D/.test(str)) return NaN;      // Check non-digit chars (/\D/).
     
@@ -21,12 +21,15 @@ var myParseInt = function(str) {
  * Finds the smallest integer in a given array.
  * Runs in linear time.
  */
-class SmallestIntegerFinder { findSmallestInt(args) {
-    var min = args[0];
-    for (var i = 1; i < args.length; i++)
-        if (args[i] < min) min = args[i];
-    return min;
-} }
+class SmallestIntegerFinder {
+    static findSmallestInt(args) {
+        var min = args[0];
+        for (var i = 1; i < args.length; i++) {
+            if (args[i] < min) min = args[i];
+        }
+        return min;
+    }
+}
     
 /* Challenge 3:
  * Finds how many breaks it takes to split an nxm chocolate bar.

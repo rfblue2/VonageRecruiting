@@ -5,15 +5,20 @@
         this.strInput = "";
 
         this.getParsedStr = function() {
-//            var str = this.strInput
-//            if (/\d\s\d/.test(str)) return NaN;  // Check digit-space-digit case.
-//            str = str.replace(/\s/g, "");        // Remove whitespace.
-//            if (/\D/.test(str)) return NaN;      // Check non-digit chars (/\D/).
-//
-//            // Invariant: At this point str must be only digits.
-//            return str;
             return myParseInt(this.strInput);
         };
     });
     
+    app.controller('FindController', function() {
+        this.arrayInput = "";
+        this.smallest = "";
+        
+        this.getSmallest = function() {
+            var arr = this.arrayInput.split(/\s/); // Read input into array
+            for (var i = 0; i < arr.length; i++) { // Make sure they're all ints
+                arr[i] = parseInt(arr[i]);
+            }
+            this.smallest = SmallestIntegerFinder.findSmallestInt(arr);
+        };
+    });
 })();

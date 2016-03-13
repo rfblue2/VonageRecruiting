@@ -21,4 +21,57 @@
             this.smallest = SmallestIntegerFinder.findSmallestInt(arr);
         };
     });
+    
+    app.controller('ChocolateController', function() {
+        this.breaks = 0;
+        this.width = 0;
+        this.height = 0;
+        
+        this.calculate = function() {
+            this.breaks = break_chocolate(this.width, this.height);
+        }
+    });
+    
+    // Adapted from angularjs.org
+    app.directive('tabs', function() {
+        return {
+            restrict: 'E',
+            templateUrl: '../html/tab.html',
+            replace: 'true',
+            transclude: true,
+            scope: {},
+            controller: function($scope, $element) {
+                var panes = $scope.panes = [];
+ 
+                $scope.select = function(pane) {
+                    angular.forEach(panes, function(pane) {
+                        pane.selected = false;
+                    });
+                    pane.selected = true;
+                }
+ 
+                this.addPane = function(pane) {
+                    if (panes.length == 0) $scope.select(pane);
+                    panes.push(pane);
+                }
+            },
+            controllerAs: 'tabs'
+        };
+    });
+    // Adapted from angularjs.org
+    app.directive('pane', function() {
+        return {
+            require: '^tabs',
+            restrict: 'E',
+            transclude: true,
+            scope: { title: '@' },
+            link: function(scope, element, attrs, tabsController) {
+                tabsController.addPane(scope);
+            },
+            template:
+                '<div class="tab-pane" ng-class="{active: selected}" ng-transclude>' +
+                '</div>',
+            replace: true
+        };
+    });
 })();
